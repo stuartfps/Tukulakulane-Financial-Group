@@ -1,0 +1,441 @@
+/* =========================================
+   Tukulakulane Group – Blue Glass Theme
+   (Extracted from final version)
+   ========================================= */
+
+/* -------------------- */
+/* Global & body styles */
+/* -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(145deg, #c7e0ff 0%, #e0f0fe 70%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: #0a2a44; /* deep blue text */
+}
+
+/* ---------------
+   Main glass card 
+   --------------- */
+.page {
+    max-width: 1400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 2.5rem 2.5rem 1.8rem 1.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 30px 50px rgba(0, 40, 80, 0.2);
+    padding: 2rem 2.5rem;
+}
+
+/* ------------- */
+/* Header styles */
+/* ------------- */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(30, 100, 200, 0.2);
+    padding-bottom: 1.2rem;
+}
+
+.title h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #0a2a44, #1e5ca3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 5px rgba(255,255,255,0.5);
+}
+
+.title .location {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #1e4a7a;
+    border-left: 4px solid #1e88e5;
+    padding-left: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.est {
+    background: rgba(30, 136, 229, 0.2);
+    border: 1px solid #1e88e5;
+    color: #0a2a44;
+    padding: 0.4rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(30,136,229,0.2);
+}
+
+/* ---------------
+   Mission stripe 
+   --------------- */
+.mission-tag {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px 8px 50px 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 40, 70, 0.1);
+    color: #0a2a44;
+    font-weight: 500;
+}
+
+/* ------------- */
+/* Tab bar       */
+/* ------------- */
+.tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(30, 136, 229, 0.3);
+    padding-left: 0.5rem;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #0a2a44;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 30, 60, 0.05);
+}
+
+.tab-btn.active {
+    background: rgba(30, 136, 229, 0.25);
+    border-color: #1e88e5;
+    color: #0a2a44;
+    font-weight: 700;
+    box-shadow: 0 -4px 12px rgba(30,136,229,0.2);
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #1e88e5;
+}
+
+/* ---------------
+   Panels container
+   --------------- */
+.panels {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-top: none;
+    padding: 2rem 2rem;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 20px 40px rgba(0, 40, 70, 0.15);
+    min-height: 360px;
+}
+
+.panel {
+    display: none;
+    animation: fadeGlow 0.25s ease;
+}
+
+.panel.active-panel {
+    display: block;
+}
+
+@keyframes fadeGlow {
+    0% { opacity: 0; transform: translateY(5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------
+   FAQ Accordion (dots)
+   -------------------- */
+.faq-accordion {
+    list-style: none;
+    max-width: 100%;
+}
+
+.faq-accordion-item {
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(30, 136, 229, 0.2);
+    padding-bottom: 0.3rem;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a2a44;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: 0.15s;
+    box-shadow: 0 2px 6px rgba(0, 50, 100, 0.1);
+}
+
+.faq-question:hover {
+    background: rgba(30, 136, 229, 0.15);
+    border-color: #1e88e5;
+}
+
+.faq-question .icon {
+    font-size: 1.5rem;
+    color: #1e88e5;
+    width: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.faq-answer {
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    margin: 0.5rem 0 1rem 1.2rem;
+    border-left: 4px solid #1e88e5;
+    border-radius: 24px;
+    color: #0a2a44;
+    font-size: 1rem;
+    box-shadow: 0 5px 12px rgba(0, 40, 70, 0.1);
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* optional dot list inside answers (if needed) */
+.dot-list {
+    list-style: none;
+    padding-left: 1.2rem;
+}
+.dot-list li::before {
+    content: "•";
+    color: #1e88e5;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2rem;
+    margin-left: -1.2rem;
+}
+
+/* ----------------
+   Leaders grid
+   ---------------- */
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.leader-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 1.5rem 1rem;
+    border-radius: 30px 6px 30px 6px;
+    box-shadow: 0 12px 25px rgba(0, 40, 70, 0.1);
+    transition: 0.2s;
+    border-left: 3px solid #1e88e5;
+}
+
+.leader-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(30,136,229,0.15);
+}
+
+.leader-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a2a44;
+}
+
+.leader-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e5ca3;
+    border-bottom: 1px dashed rgba(30, 136, 229, 0.3);
+    padding-bottom: 0.4rem;
+    margin: 0.4rem 0 0.8rem;
+}
+
+.leader-tel {
+    font-family: monospace;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 0.2rem 1rem;
+    border: 1px solid #1e88e5;
+    border-radius: 40px;
+    display: inline-block;
+    color: #0a2a44;
+}
+
+/* -----------------------
+   Financial cycle panel
+   (days countdown focus)
+   ----------------------- */
+.cycle-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(30, 136, 229, 0.4);
+    border-radius: 40px 8px 40px 8px;
+    padding: 1.8rem;
+}
+
+.cycle-dates {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: rgba(30, 136, 229, 0.15);
+    border: 1px solid #1e88e5;
+    color: #0a2a44;
+    display: inline-block;
+    padding: 0.4rem 1.8rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+}
+
+.countdown-container {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 60px;
+    padding: 1.5rem 1.8rem;
+    margin: 1.2rem 0;
+    text-align: center;
+}
+
+.days-big {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #0a2a44;
+    line-height: 1.2;
+}
+
+.days-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1e5ca3;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1e4a7a;
+    margin-top: 0.8rem;
+}
+
+#countdown-timer {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #1e88e5;
+    color: #0a2a44;
+    padding: 0.7rem 1.5rem;
+    border-radius: 70px;
+    display: inline-block;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+}
+
+.cycle-note {
+    font-size: 1rem;
+    border-top: 1px solid rgba(30, 136, 229, 0.2);
+    padding-top: 0.8rem;
+    color: #1e4a7a;
+}
+
+/* --------------------
+   Deposit protection footer
+   -------------------- */
+.protection {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(30, 136, 229, 0.5);
+    border-radius: 50px 50px 16px 16px;
+    padding: 1.2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.protection-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a2a44;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.5);
+}
+
+.protection-badge {
+    background: rgba(30, 136, 229, 0.2);
+    border: 1px solid #1e88e5;
+    color: #0a2a44;
+    padding: 0.5rem 2rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    backdrop-filter: blur(8px);
+}
+
+/* ----------------
+   Responsive
+   ---------------- */
+@media (max-width: 800px) {
+    .leaders-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 1.2rem;
+    }
+    .title h1 {
+        font-size: 2.2rem;
+    }
+    .tab-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    .days-big {
+        font-size: 3rem;
+    }
+    .leaders-grid {
+        grid-template-columns: 1fr;
+    }
+}
